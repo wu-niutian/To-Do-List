@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var todos = [
+        Todo(title: "Watch some paw patrol!"),
+        Todo(title: "Conduct a giveaway"),
+        Todo(title: "Randomly deduct points")
+    ]
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        //NavigationView is going to contain every single thing
+        NavigationView {
+            List(todos) { todo in
+                Text(todo.title)
+                
+            }
+            .navigationTitle("My Important Things")
+        }
     }
 }
 
