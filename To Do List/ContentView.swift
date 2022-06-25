@@ -43,9 +43,16 @@ struct ContentView: View {
                             }
                         }
                     }
+                }.onDelete { indexSet in
+                    todos.remove(atOffsets: indexSet)
                 }
             }
-            .navigationTitle("To Do")
+            .navigationTitle("Todos")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+            }
         }
     }
 }
