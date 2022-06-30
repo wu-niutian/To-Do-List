@@ -23,6 +23,7 @@
 		CC82B8482866A74A00FCE4A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC82B84F2866A7E400FCE4A7 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		CC82B8512866B59F00FCE4A7 /* ToDoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailView.swift; sourceTree = "<group>"; };
+		CC82B853286736BD00FCE4A7 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 			children = (
 				CC82B8412866A74700FCE4A7 /* To_Do_ListApp.swift */,
 				CC82B8432866A74700FCE4A7 /* ContentView.swift */,
+				CC82B853286736BD00FCE4A7 /* NewTodoView.swift */,
 				CC82B8512866B59F00FCE4A7 /* ToDoDetailView.swift */,
 				CC82B84F2866A7E400FCE4A7 /* Todo.swift */,
 				CC82B8452866A74A00FCE4A7 /* Assets.xcassets */,

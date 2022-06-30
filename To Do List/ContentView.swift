@@ -15,6 +15,7 @@ struct ContentView: View {
         Todo(title: "Slap Ruiyi!!!")
     ]
     
+   @State var isSheetPresented = false
     
     var body: some View {
         //NavigationView is going to contain every single thing
@@ -46,13 +47,27 @@ struct ContentView: View {
                 }.onDelete { indexSet in
                     todos.remove(atOffsets: indexSet)
                 }
+                .onMove { indices, newOffset in
+                    todos.move(fromOffsets: indices, toOffset: newOffset)
+                    
+                }
             }
             .navigationTitle("Todos")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isSheetPresented = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
             }
+        }
+        .sheet(isPresented: $isSheetPresented) {
+//            NewwTodoView(todos: $todos)
         }
     }
 }
