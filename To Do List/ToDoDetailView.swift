@@ -25,7 +25,7 @@ struct ToDoDetailView: View {
                     
                 }
             } label: {
-                Text("Mark as \(todo.isCompleted ? "incomplete" : "complete" )")
+                Text("Mark as \(todo.isCompleted ? "incompleted" : "completed" )")
             }
             .padding()
             

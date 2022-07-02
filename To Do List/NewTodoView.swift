@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
-@State var todo = ""
 
-@Binding var todos: [Todo]
+struct NewTodoView: View {
+    
+    @State var todo = ""
 
-@Environment(\.presentationMode) var presentationMode
+    @Binding var todos: [Todo]
 
-struct NewwTodoView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         Form {
             TextField("Task Name", text: $todo)
@@ -26,8 +28,8 @@ struct NewwTodoView: View {
     }
 }
 
-struct NewwTodoView_Previews: PreviewProvider {
+struct NewTodoView_Previews: PreviewProvider {
     static var previews: some View {
-        NewwTodoView(todos: .constant([]))
+        NewTodoView(todos: .constant([]))
     }
 }

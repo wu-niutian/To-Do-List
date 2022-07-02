@@ -12,10 +12,9 @@ struct ContentView: View {
         Todo(title: "Watch some paw patrol!", isCompleted: true, details: "Episode 5 - 10"),
         Todo(title: "Pay attention to YJ in class"),
         Todo(title: "Go get free points in giveaways"),
-        Todo(title: "Slap Ruiyi!!!")
-    ]
+        Todo(title: "Slap Ruiyi!!!")]
     
-   @State var isSheetPresented = false
+    @State var isSheetPresented = false
     
     var body: some View {
         //NavigationView is going to contain every single thing
@@ -56,6 +55,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
+                    // EditButton is a special thing to use directly
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -67,7 +67,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $isSheetPresented) {
-//            NewwTodoView(todos: $todos)
+            NewTodoView(todos: $todos)
         }
     }
 }
