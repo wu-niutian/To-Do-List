@@ -16,11 +16,13 @@ struct ContentView: View {
     
     @State var isSheetPresented = false
     
+    @StateObject var todoManager = TodoManager()
+    
     var body: some View {
         //NavigationView is going to contain every single thing
         NavigationView {
             List {
-                ForEach($todos) { $todo in
+                ForEach($todoManager.todos) { $todo in
                     NavigationLink{
                         ToDoDetailView(todo: $todo)
                     } label: {
@@ -44,10 +46,10 @@ struct ContentView: View {
                         }
                     }
                 }.onDelete { indexSet in
-                    todos.remove(atOffsets: indexSet)
+                    todoManager.todos.remove(atOffsets: indexSet)
                 }
                 .onMove { indices, newOffset in
-                    todos.move(fromOffsets: indices, toOffset: newOffset)
+                    todoManager.todos.move(fromOffsets: indices, toOffset: newOffset)
                     
                 }
             }
@@ -67,7 +69,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $isSheetPresented) {
-            NewTodoView(todos: $todos)
+            NewTodoView(todos: $todoManager.todos)
         }
     }
 }

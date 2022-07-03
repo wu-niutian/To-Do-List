@@ -21,8 +21,7 @@ struct ToDoDetailView: View {
             
             Button{
                 withAnimation{
-                    todo.isCompleted.toggle()
-                    
+                   todo.isCompleted.toggle()
                 }
             } label: {
                 Text("Mark as \(todo.isCompleted ? "incompleted" : "completed" )")
